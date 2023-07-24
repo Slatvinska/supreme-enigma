@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Серце</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .heart {
+            font-size: 100px;
+            color: red;
+            animation: heartBeat 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <form oninput="hearts.innerHTML = ''; for (let i = 0; i < num_hearts.value; i++) { hearts.innerHTML += '❤️'; }">
+        <label for="num_hearts">Кількість сердечок: </label>
+        <input type="number" id="num_hearts" min="1" value="1">
+    </form>
+    <div class="heart" id="hearts">❤️</div>
+</body>
+</html>
