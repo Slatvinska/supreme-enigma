@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Матриця</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .matrix-container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .column {
+      /* Змінимо ширину стовпця, враховуючи кількість крапок і проміжні відступи. */
+      width: calc(12px + 4px); /* Ширина крапки + проміжний відступ. */
+      height: 100%;
+      background-color: black;
+      margin-right: 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin: 1px;
+      background-color: #00ff00; /* Зелений колір */
+      border-radius: 50%;
+      animation: dot-animation 0.5s infinite;
+    }
+
+    @keyframes dot-animation {
+      0% {
+        opacity: 0.2;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="matrix-container">
+    <!-- Використовуємо цикл або скрипт, щоб створити 100 стовпців з крапками. -->
+    <!-- Нижче показано приклад використання JavaScript для створення 100 стовпців. -->
+    <!-- Цей приклад використовує скрипт, який виконується один раз, при завантаженні сторінки. -->
+
+    <script>
+      // Отримуємо посилання на контейнер з класом "matrix-container".
+      const matrixContainer = document.querySelector(".matrix-container");
+
+      // Функція для створення стовпця з заданою кількістю крапок (dotsCount).
+      function createColumn(dotsCount) {
+        const column = document.createElement("div");
+        column.className = "column";
+        for (let i = 0; i < dotsCount; i++) {
+          const dot = document.createElement("div");
+          dot.className = "dot";
+          column.appendChild(dot);
+        }
+        return column;
+      }
+
+      // Кількість крапок у кожному стовпці (зелених крапок).
+      const dotsInColumn = 100;
+
+      // Кількість стовпців.
+      const columnsCount = 100;
+
+      // Створюємо 100 стовпців з 100 зеленими крапками у кожному стовпці.
+      for (let i = 0; i < columnsCount; i++) {
+        const column = createColumn(dotsInColumn);
+        matrixContainer.appendChild(column);
+      }
+    </script>
+  </div>
+</body>
+</html>
