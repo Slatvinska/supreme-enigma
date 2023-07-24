@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Серце</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .heart {
+            font-size: 100px;
+            color: red;
+            animation: heartBeat 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <span class="heart">❤️</span>
+</body>
+</html>
